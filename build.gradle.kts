@@ -10,7 +10,7 @@ plugins {
 group = "com.nainssa.media_finder"
 version = "0.0.1"
 application {
-    mainClass.set("com.nainssa.media_finder.ApplicationKt")
+    mainClass.set("com.nainssa.media_finder.core.ApplicationKt")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
@@ -18,6 +18,10 @@ application {
 
 repositories {
     mavenCentral()
+}
+
+kotlin {
+    jvmToolchain(17)
 }
 
 dependencies {
